@@ -134,15 +134,33 @@ int main ()
     int opcao=0;
     int laco=1;
 
-    for(laco=1;laco=1;)
-    {
-        setlocale(LC_ALL, "Portuguese_Brazil");
+    char senhadigitada[] = "a";
+    int comparacao;
+
+    setlocale(LC_ALL, "Portuguese_Brazil");
 
             printf("					++++++++++++++++++++\n");
             printf("					+                  +\n");
             printf("					+ Cartório da EBAC +\n");
             printf("					+                  +\n");
             printf("					++++++++++++++++++++\n\n");
+
+            printf("Login de administrador!\n\nDigite a sua senha: ");
+            scanf("%s", senhadigitada);
+
+
+    comparacao = strcmp(senhadigitada, "admin");
+    if (comparacao == 0){
+
+    system("cls"); // limpa o terminal
+
+        for(laco=1;laco=1;) {
+            printf("					++++++++++++++++++++\n");
+            printf("					+                  +\n");
+            printf("					+ Cartório da EBAC +\n");
+            printf("					+                  +\n");
+            printf("					++++++++++++++++++++\n\n");
+
             printf("\t1 - Registrar nomes\n");
             printf("\t2 - Consultar nomes\n");
             printf("\t3 - Deletar nomes\n\n");
@@ -167,19 +185,22 @@ int main ()
 
 			case 3:
             	del();
-                break;
-        	
+            break;
+
         	case 4:
                  printf("Obrigado por utilizar o sistema\n");
                  return 0;
-                 break;
+            break;
 
 			default:        //caso o usuário digite um valor não mapeado
             	printf("Esta opção não está disponível!\n"); //exibe esta mensagem
             	system("pause");
             break;
-					}
+            }
 
-	}
+        }
+
+    } else
+        printf("Senha incorreta!");
 
 }
